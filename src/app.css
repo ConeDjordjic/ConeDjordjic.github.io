@@ -1,0 +1,45 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bg: #16161a;
+  --color-panel: #1c1c22;
+  --color-panel2: #21212a;
+  --color-border: #2a2a36;
+  --color-line: #333340;
+  --color-addr: #5a8cad;
+  --color-func: #569cd6;
+  --color-string: #ce9178;
+  --color-keyword: #4ec9b0;
+  --color-highlight: #c586c0;
+  --color-warn: #dcdcaa;
+  --color-text: #d4d4d4;
+  --color-text2: #9d9d9d;
+  --color-text3: #5c5c66;
+  --font-mono: "DM Mono", "JetBrains Mono", "Cascadia Code", monospace;
+}
+
+@font-face { font-family:"DM Mono"; src:url("/fonts/DMMono-Regular.woff2") format("woff2"); font-weight:400; font-style:normal; font-display:swap; }
+@font-face { font-family:"DM Mono"; src:url("/fonts/DMMono-Medium.woff2") format("woff2"); font-weight:500; font-style:normal; font-display:swap; }
+
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-mono);
+  font-size: 14px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+.scrollbar::-webkit-scrollbar { width:6px; }
+.scrollbar::-webkit-scrollbar-track { background:var(--color-panel); }
+.scrollbar::-webkit-scrollbar-thumb { background:var(--color-line); border-radius:3px; }
+.scrollbar::-webkit-scrollbar-thumb:hover { background:var(--color-addr); }
+
+@keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
+@keyframes cursor-blink { 0%,100%{opacity:1} 50%{opacity:.3} }
+
+@media (prefers-reduced-motion: reduce) {
+  *,*::before,*::after { animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important }
+}
